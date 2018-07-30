@@ -1,0 +1,42 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: report-server
+  labels:
+    app: report-server
+spec:
+  template:
+    metadata:
+      name: report-server
+      labels:
+        app: report-server
+    spec:
+      containers:
+      - name: report-server
+        image: test.caicloudprivatetest.com/library/report:v0.0.1
+        ports:
+        - containerPort: 8083
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: report-server
+spec:
+  ports:
+  - port: 8083
+    targetPort: 8083
+  selector:
+    app: report-server
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: report-server-nodeport
+spec:
+  type: NodePort
+  ports:
+  - port: 8083
+    targetPort: 8083
+    nodePort: 30083
+  selector:
+    app: report-server

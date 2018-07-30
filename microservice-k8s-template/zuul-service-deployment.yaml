@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: zuul-server
+  labels:
+    app: zuul-server
+spec:
+  template:
+    metadata:
+      name: zuul-server
+      labels:
+        app: zuul-server
+    spec:
+      containers:
+      - name: zuul-server
+        image: test.caicloudprivatetest.com/library/zuul:v0.0.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8082
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zuul-server
+spec:
+  ports:
+  - port: 8084
+    targetPort: 8084
+  selector:
+    app: zuul-server
