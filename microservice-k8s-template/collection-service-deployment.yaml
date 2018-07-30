@@ -23,10 +23,8 @@ kind: Service
 metadata:
   name: collection-server
 spec:
-  type: NodePort
   ports:
   - port: 8081
     targetPort: 8081
-    nodePort: 30064
   selector:
     app: collection-server
