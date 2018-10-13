@@ -5,9 +5,15 @@
 + **SpringCloud** Finchley.RELEASE
 + **SpringBoot** 2.0.3.RELEASE
 + **Jib** 0.9.6
++ **Zipkin** 2.11
 
 
 # Quickstart
+### run the container
+```
+docker run -d -p 6379:6379 redis
+docker run -d -p 9411:9411 openzipkin/zipkin
+```
 ### 1. Clone the project
 ```
 git clone https://github.com/sugare/Weather.git

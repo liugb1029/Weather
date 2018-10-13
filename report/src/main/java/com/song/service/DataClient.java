@@ -23,4 +23,5 @@ public interface DataClient {
      */
     @GetMapping("/data/weather/cityId/{cityId}")
     WeatherResponse getDataByCityId(@PathVariable("cityId") String cityId);
+
 }
