@@ -29,7 +29,9 @@ public class AuthFilter extends ZuulFilter {
 
     @Override
     public Object run() throws ZuulException {
+
         RequestContext requestContext = RequestContext.getCurrentContext();
+
         requestContext.addZuulRequestHeader("Authorization", "123");
         return null;
     }

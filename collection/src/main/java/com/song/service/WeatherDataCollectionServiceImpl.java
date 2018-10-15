@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 @Service
 public class WeatherDataCollectionServiceImpl implements WeatherDataCollectionService {
+
 	private static final String WEATHER_URI = "http://wthrcdn.etouch.cn/weather_mini?";
 
 	private static final long TIME_OUT = 1800L; // 1800s

@@ -1,0 +1,9 @@
+server.port=8765
+spring.application.name=turbine
+eureka.client.service-url.default-zone=http://localhost:8761/eureka
+
+turbine.app-config=feighHystrix
+turbine.aggregator.cluster-config=default
+turbine.cluster-name-expression=new String("default")
+
+management.endpoints.web.exposure.include=*
